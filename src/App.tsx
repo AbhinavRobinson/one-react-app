@@ -1,13 +1,19 @@
-import React from "react";
+import Reminder from "./components/Reminder";
 
-function App() {
+/** Reminder Component
+ * @returns {JsxElement} App
+ *
+ * @author Abhinav Robinson
+ */
+const App = () => {
   return (
-    <div className="bg-blue-100 p-0 m-0 w-screen h-screen">
-      <div className="text-blue-700 text-8xl font-semibold h-screen flex items-center justify-center">
-        Hello React
-      </div>
+    <div className="w-screen h-screen p-0 m-0 bg-blue-100">
+      {/** Reminder
+       * @component Reminder
+       */}
+      <Reminder />
     </div>
   );
-}
+};
 
 export default App;
