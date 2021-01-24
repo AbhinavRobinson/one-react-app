@@ -1,10 +1,11 @@
 import React from "react";
-import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="hello">Hello react!</h1>
+    <div className="bg-blue-100 w-screen h-screen p-0 m-0">
+      <h1 className="text-3xl text-blue-800 text-center v-center">
+        Hello react!
+      </h1>
     </div>
   );
 }
