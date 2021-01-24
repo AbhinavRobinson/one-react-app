@@ -7,7 +7,7 @@ import Reminder from "./components/Reminder";
  */
 const App = () => {
   return (
-    <div className="w-screen h-screen p-0 m-0 bg-blue-100">
+    <div className="flex items-center justify-center w-screen h-screen p-8 m-0 bg-blue-50">
       {/** Reminder
        * @component Reminder
        */}
