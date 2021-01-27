@@ -2,9 +2,13 @@
  * @returns Add task button
  */
 const Button = ({
-  color = "bg-black",
-  text = "Add Tasks",
-  onClick = () => {},
+  color,
+  text,
+  onClick,
+}: {
+  color: any;
+  text: any;
+  onClick: any;
 }) => {
   return (
     <button

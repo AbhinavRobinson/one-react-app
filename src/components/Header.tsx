@@ -3,7 +3,7 @@ import Button from "./Button";
 /** Task Header Component
  * @returns Task Header
  */
-const Header = ({ title = "Reminders" }) => {
+const Header = ({ title }: any) => {
   const onClick = () => {
     console.log("clicked");
   };
