@@ -10,8 +10,10 @@ import Tasks from "./components/Tasks";
 const App = () => {
   const [tasks, setTasks] = useState([
     {
-      id: 0,
+      id: "0",
       text: "Test",
+      day: "Test 0",
+      reminder: false,
     },
   ]);
 

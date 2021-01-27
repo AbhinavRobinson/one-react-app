@@ -1,13 +1,14 @@
+import Task from "./Task";
+
 /** Tasks Component
  * @returns Tasks
  */
-const Tasks = ({
-  tasks = [{ id: 0, text: "No tasks available right now." }],
-}) => {
+const Tasks = ({ tasks }: { tasks: any[] }) => {
   return (
     <>
+      {console.log(tasks)}
       {tasks.map((task) => (
-        <h3 key={task.id}>{task.text}</h3>
+        <Task key={task.id} task={task} />
       ))}
     </>
   );
