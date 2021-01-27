@@ -3,9 +3,9 @@
  */
 const Task = ({ task }: { task: any }) => {
   return (
-    <div className="">
-      <h3>{task.text}</h3>
-      <p>{task.id}</p>
+    <div className="w-full p-4 my-2 bg-indigo-100 rounded-md">
+      <h3 className="text-xl font-semibold">{task.text}</h3>
+      <p>{task.day}</p>
     </div>
   );
 };

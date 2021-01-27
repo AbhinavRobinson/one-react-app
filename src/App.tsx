@@ -10,16 +10,22 @@ import Tasks from "./components/Tasks";
 const App = () => {
   const [tasks, setTasks] = useState([
     {
-      id: "0",
-      text: "Test",
-      day: "Test 0",
+      id: "1",
+      text: "Coding Session with Codechef",
+      day: "Jan 28th at 3:30pm",
+      reminder: false,
+    },
+    {
+      id: "2",
+      text: "Meeting for Nudge App",
+      day: "Everyday at 8:45pm",
       reminder: false,
     },
   ]);
 
   return (
     <div className="flex items-center justify-center w-screen h-screen p-8 m-0 bg-indigo-900">
-      <div className="flex flex-col w-2/3 p-12 m-0 bg-white border-2 border-gray-900 shadow-inner h-1/2 rounded-xl">
+      <div className="flex flex-col w-2/3 h-auto p-12 m-0 bg-white border-2 border-gray-900 shadow-inner rounded-xl">
         <Header />
         <Tasks tasks={tasks} />
       </div>
