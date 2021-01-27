@@ -25,6 +25,8 @@ const App = () => {
 
   /**
    * DELETE TASK
+   * @param {string} id
+   * @reutrns void
    */
   const deleteTask = (id: string) => {
     setTasks(tasks.filter((task) => task.id !== id));

@@ -3,7 +3,7 @@ import Task from "./Task";
 /** Tasks Component
  * @returns Tasks
  */
-const Tasks = ({ tasks, onDelete }: { tasks: any[]; onDelete: any }) => {
+const Tasks = ({ tasks, onDelete }: { tasks: any[]; onDelete: Function }) => {
   return (
     <>
       {console.log(tasks)}
