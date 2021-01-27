@@ -23,11 +23,22 @@ const App = () => {
     },
   ]);
 
+  /**
+   * DELETE TASK
+   */
+  const deleteTask = (id: string) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return (
     <div className="flex items-center justify-center w-screen h-screen p-8 m-0 bg-indigo-900">
-      <div className="flex flex-col w-2/3 h-auto p-12 m-0 bg-white border-2 border-gray-900 shadow-inner rounded-xl">
+      <div className="flex flex-col w-2/3 h-auto max-w-screen-sm p-12 m-0 bg-white border-2 border-gray-900 shadow-inner rounded-xl">
         <Header />
-        <Tasks tasks={tasks} />
+        {tasks.length > 0 ? (
+          <Tasks tasks={tasks} onDelete={deleteTask} />
+        ) : (
+          "No Tasks Added"
+        )}
       </div>
     </div>
   );
