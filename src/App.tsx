@@ -1,7 +1,7 @@
 import Reminder from "./components/Reminder";
 
 /** Reminder Component
- * @returns {JsxElement} App
+ * @returns App
  *
  * @author Abhinav Robinson
  */
