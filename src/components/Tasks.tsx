@@ -1,7 +1,9 @@
 /** Tasks Component
  * @returns Tasks
  */
-const Tasks = ({ tasks = [{ id: "0", text: "test" }] }) => {
+const Tasks = ({
+  tasks = [{ id: 0, text: "No tasks available right now." }],
+}) => {
   return (
     <>
       {tasks.map((task) => (
