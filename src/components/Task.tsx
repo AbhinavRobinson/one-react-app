@@ -14,10 +14,10 @@ const Task = ({
 }) => {
   return (
     <div
-      className={`w-full border-l-8 duration-200 p-4 my-2 bg-yellow-100 rounded-md hover:bg-yellow-200 select-none ${
+      className={`w-full border-l-8 p-4 my-2 bg-yellow-100 rounded-md hover:bg-yellow-200 select-none ${
         task.reminder ? "border-green-500" : "border-transparent"
       }`}
-      onClick={() => {
+      onDoubleClick={() => {
         onToggle(task.id);
       }}
     >
