@@ -15,7 +15,7 @@ const AddTasks = ({ onAdd }: { onAdd: Function }) => {
    * @returns void
    */
   const [text, setText] = useState("");
-  const [daytime, setDayTime] = useState("");
+  const [day, setDay] = useState("");
   const [reminder, setReminder] = useState(false);
 
   /**
@@ -35,16 +35,16 @@ const AddTasks = ({ onAdd }: { onAdd: Function }) => {
       alert("Please Add Tasks :)");
       return;
     }
-    if (!daytime) {
+    if (!day) {
       alert("Please Add Date and Time :)");
       return;
     }
 
-    onAdd({ text, daytime, reminder });
+    onAdd({ text, day, reminder });
 
     // clear states
     setText("");
-    setDayTime("");
+    setDay("");
     setReminder(false);
   };
 
@@ -69,8 +69,8 @@ const AddTasks = ({ onAdd }: { onAdd: Function }) => {
           className="px-2 py-1 font-semibold border-2 border-black rounded-md text-md"
           type="text"
           placeholder="Add Day and Time"
-          value={daytime}
-          onChange={(e) => setDayTime(e.target.value)}
+          value={day}
+          onChange={(e) => setDay(e.target.value)}
         />
       </div>
       <div className="py-3 text-xl font-semibold form-control">
