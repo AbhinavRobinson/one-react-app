@@ -6,7 +6,6 @@ import Task from "./Task";
 const Tasks = ({ tasks, onDelete }: { tasks: any[]; onDelete: Function }) => {
   return (
     <>
-      {console.log(tasks)}
       {tasks.map((task) => (
         <Task key={task.id} task={task} onDelete={onDelete} />
       ))}
