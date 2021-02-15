@@ -10,6 +10,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "json-server": "^0.16.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
@@ -20,7 +21,8 @@
   "scripts": {
     "start": "npm run tailwind:css && react-scripts start",
     "tailwind:css": "tailwind build src/tailwind.css -c tailwind.config.js -o src/index.css",
-    "build": "npm run tailwind:css && react-scripts build"
+    "build": "npm run tailwind:css && react-scripts build",
+    "server": "json-server --watch db.json --port 8000"
   },
   "eslintConfig": {
     "extends": [
