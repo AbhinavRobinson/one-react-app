@@ -18,30 +18,38 @@ const App: React.FC = () => {
     { id: 0, text: "", day: "", reminder: false },
   ]);
 
+  /**
+   * FETCH DATA FROM SERVER
+   */
   useEffect(() => {
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks();
       setTasks(tasksFromServer);
     };
-
     getTasks();
   }, []);
 
-  // fetch tasks
+  /**
+   * @summary feteches tasks list from server
+   *
+   * @returns data
+   */
   const fetchTasks = async () => {
     const res = await fetch("http://localhost:8000/tasks");
-
     const data = await res.json();
-
     return data;
   };
 
-  // fetch tasks
+  /**
+   * @summary feteches single task from server
+   *
+   * @param {Number} id
+   *
+   * @returns data
+   */
   const fetchTask = async (id: Number) => {
     const res = await fetch(`http://localhost:8000/tasks/${id}`);
-
     const data = await res.json();
-
     return data;
   };
 
@@ -55,7 +63,6 @@ const App: React.FC = () => {
    */
   const deleteTask = async (id: Number) => {
     await fetch(`http://localhost:8000/tasks/${id}`, { method: "DELETE" });
-
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
@@ -68,9 +75,11 @@ const App: React.FC = () => {
    * @returns void
    */
   const toggleReminder = async (id: Number) => {
+    // get task to toggle
     const taskToToggle = await fetchTask(id);
+    // toggle reminder property
     const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
-
+    // update task
     const res = await fetch(`http://localhost:8000/tasks/${id}`, {
       method: "PUT",
       headers: {
@@ -78,9 +87,9 @@ const App: React.FC = () => {
       },
       body: JSON.stringify(updTask),
     });
-
+    // get responce
     const data = await res.json();
-
+    // update UI
     setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, reminder: data.reminder } : task
@@ -96,16 +105,17 @@ const App: React.FC = () => {
    * @returns void
    */
   const addTask = async (task: any) => {
+    // update Task list on server
     const res = await fetch("http://localhost:8000/tasks", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(task),
     });
-
+    // get responce
     const data = await res.json();
-
+    // update UI
     setTasks([...tasks, data]);
-
+    // hide add task ui
     showAddTask(false);
   };
 
