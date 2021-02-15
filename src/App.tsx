@@ -43,7 +43,7 @@ const App = () => {
   /**
    * TOGGLE REMINDER
    *
-   * @summary toggle reminder on/off on double click event
+   * @summary toggle reminder on/off on click event
    *
    * @param {string} id
    * @returns void
