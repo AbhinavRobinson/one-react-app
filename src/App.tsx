@@ -79,8 +79,17 @@ const App = () => {
     setTasks([...tasks, newTask]);
   };
 
+  /**
+   * SHOW ADD TASK STATE
+   *
+   * @param {Boolean} showaddtask - to show or not to show
+   * @param {Function} showAddTask - toggle showaddtask
+   */
   const [showaddtask, showAddTask] = useState(Boolean);
 
+  /**
+   * @summary hide or show (toggle) add task
+   */
   const hideAddTask = () => {
     showAddTask(!showaddtask);
   };
