@@ -1,11 +1,12 @@
 import { useLocation } from "react-router-dom";
 
+/**
+ * ABOUT PAGE
+ */
 const About = () => {
-  const location = useLocation();
-
   return (
     <>
-      {location.pathname === "/about" && (
+      {useLocation().pathname === "/about" && (
         <div>
           <h2 className="font-semibold">one-react-app : Version 1.0.0</h2>
           <p className="py-2 font-normal">

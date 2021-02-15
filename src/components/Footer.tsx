@@ -1,5 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 
+/**
+ * FOOTER
+ */
 const Footer = () => {
   return (
     <footer className="mt-10 text-center">

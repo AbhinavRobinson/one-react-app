@@ -149,7 +149,6 @@ const App: React.FC = () => {
             hideAddTask={hideAddTask}
             showaddtask={showaddtask}
           />
-
           <Route
             path="/"
             exact

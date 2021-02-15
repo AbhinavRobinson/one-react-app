@@ -17,12 +17,10 @@ const Header = ({
   hideAddTask: Function;
   showaddtask: Boolean;
 }) => {
-  const location = useLocation();
-
   return (
     <header className="flex flex-row w-full h-16">
       <h1 className="w-4/5 text-4xl font-medium align-middle">{title}</h1>
-      {location.pathname === "/" && (
+      {useLocation().pathname === "/" && (
         <Button
           color={showaddtask ? "bg-red-500" : "bg-green-500"}
           text={showaddtask ? "Cancel" : "Add Tasks"}
