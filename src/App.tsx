@@ -44,7 +44,9 @@ const App: React.FC = () => {
    * @param {string} id
    * @reutrns void
    */
-  const deleteTask = (id: Number) => {
+  const deleteTask = async (id: Number) => {
+    await fetch(`http://localhost:8000/tasks/${id}`, { method: "DELETE" });
+
     setTasks(tasks.filter((task, index) => index !== id));
   };
 
