@@ -4,15 +4,8 @@ import { useState } from "react";
  * @summary gives ability to add tasks
  *
  * @param {Function} onAdd : add tasks
- * @param {Boolean} showAddTask : toggle this Component
  */
-const AddTasks = ({
-  onAdd = () => {},
-  showAddTask = false,
-}: {
-  onAdd: Function;
-  showAddTask: Boolean;
-}) => {
+const AddTasks = ({ onAdd = () => {} }: { onAdd: Function }) => {
   /**
    * State Updates
    *
@@ -63,9 +56,7 @@ const AddTasks = ({
 
   return (
     <form
-      className={`absolute ${
-        showAddTask ? "flex" : "hidden"
-      } flex-col flex-wrap self-end p-5 mb-4 duration-200 transform translate-y-16 border-2 border-gray-500 shadow-2xl w-96 bg-gray-50 rounded-xl add-form`}
+      className={`absolute flex flex-col flex-wrap self-end p-5 mb-4 duration-200 transform translate-y-16 border-2 border-gray-500 shadow-2xl w-96 bg-gray-50 rounded-xl add-form`}
       onSubmit={onSubmit}
     >
       <div className="py-4 form-control">

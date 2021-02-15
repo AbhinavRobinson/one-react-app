@@ -102,7 +102,7 @@ const App = () => {
     <div className="flex items-center justify-center w-screen h-screen p-8 m-0 bg-gradient-to-tr from-yellow-500 to-red-300">
       <div className="flex flex-col w-2/3 h-auto max-w-screen-sm p-12 m-0 bg-white shadow-2xl rounded-xl">
         <Header title="Reminder" hideAddTask={hideAddTask} />
-        <AddTasks onAdd={addTask} showAddTask={showaddtask} />
+        {showaddtask && <AddTasks onAdd={addTask} />}
         {/* if no tasks, show "No tasks added" */}
         {tasks.length ? (
           <Tasks
