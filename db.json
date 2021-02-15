@@ -5,6 +5,12 @@
       "text": "Coding Session with Codechef",
       "day": "Jan 28th at 3:30pm",
       "reminder": true
+    },
+    {
+      "text": "Atom Meeting",
+      "day": "Everyday",
+      "reminder": true,
+      "id": 2
     }
   ]
 }

@@ -56,7 +56,7 @@ const App: React.FC = () => {
   const deleteTask = async (id: Number) => {
     await fetch(`http://localhost:8000/tasks/${id}`, { method: "DELETE" });
 
-    setTasks(tasks.filter((task, index) => index !== id));
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
   /**
@@ -105,6 +105,8 @@ const App: React.FC = () => {
     const data = await res.json();
 
     setTasks([...tasks, data]);
+
+    showAddTask(false);
   };
 
   /**
