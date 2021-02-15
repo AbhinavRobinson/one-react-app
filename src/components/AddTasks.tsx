@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddTasks = () => {
+const AddTasks = ({ onAdd }: { onAdd: Function }) => {
   /**
    * State Updates
    *
@@ -16,10 +16,43 @@ const AddTasks = () => {
    */
   const [text, setText] = useState("");
   const [daytime, setDayTime] = useState("");
-  const [reminder, setReminder] = useState("");
+  const [reminder, setReminder] = useState(false);
+
+  /**
+   * OnSubmit Event Function
+   * @param e : Event triggered
+   *
+   * @summary add new task of text,daytime,reminder
+   *
+   * @returns void
+   */
+  const onSubmit = (e: any) => {
+    // basic event validation
+    e.preventDefault();
+
+    // alerts
+    if (!text) {
+      alert("Please Add Tasks :)");
+      return;
+    }
+    if (!daytime) {
+      alert("Please Add Date and Time :)");
+      return;
+    }
+
+    onAdd({ text, daytime, reminder });
+
+    // clear states
+    setText("");
+    setDayTime("");
+    setReminder(false);
+  };
 
   return (
-    <form className="absolute flex flex-col flex-wrap self-end p-5 mb-4 duration-200 transform translate-y-16 border-2 border-gray-500 shadow-2xl w-96 bg-gray-50 rounded-xl add-form">
+    <form
+      className="absolute flex flex-col flex-wrap self-end p-5 mb-4 duration-200 transform translate-y-16 border-2 border-gray-500 shadow-2xl w-96 bg-gray-50 rounded-xl add-form"
+      onSubmit={onSubmit}
+    >
       <div className="py-4 form-control">
         <label className="text-xl font-semibold pr-28">Task</label>
         <input
@@ -44,8 +77,9 @@ const AddTasks = () => {
         <label className="pr-3">Set Reminder?</label>
         <input
           type="checkbox"
-          value={reminder}
-          onChange={(e) => setReminder(e.currentTarget.checked.toString())}
+          // checked={reminder}
+          value={reminder.toString()}
+          onChange={(e) => setReminder(e.currentTarget.checked)}
         />
       </div>
 
