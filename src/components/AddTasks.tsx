@@ -85,7 +85,7 @@ const AddTasks = ({
         <label className="pr-3">Set Reminder?</label>
         <input
           type="checkbox"
-          // checked={reminder}
+          checked={reminder}
           value={reminder.toString()}
           onChange={(e) => setReminder(e.currentTarget.checked)}
         />
