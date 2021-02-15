@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTasks from "./components/AddTasks";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 /** Reminder Component
  * @returns App
@@ -148,17 +149,27 @@ const App: React.FC = () => {
             hideAddTask={hideAddTask}
             showaddtask={showaddtask}
           />
-          {showaddtask && <AddTasks onAdd={addTask} />}
-          {/* if no tasks, show "No tasks added" */}
-          {tasks.length ? (
-            <Tasks
-              tasks={tasks}
-              onDelete={deleteTask}
-              onToggle={toggleReminder}
-            />
-          ) : (
-            "No Tasks Added"
-          )}
+
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <>
+                {showaddtask && <AddTasks onAdd={addTask} />}
+                {/* if no tasks, show "No tasks added" */}
+                {tasks.length ? (
+                  <Tasks
+                    tasks={tasks}
+                    onDelete={deleteTask}
+                    onToggle={toggleReminder}
+                  />
+                ) : (
+                  "No Tasks Added"
+                )}
+              </>
+            )}
+          />
+          <Route path="/about" component={About} />
           <Footer />
         </div>
       </div>
