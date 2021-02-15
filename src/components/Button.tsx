@@ -1,13 +1,19 @@
-/** Add Task Button Component
+/**
+ * @summary Add Task Button Component
+ *
+ * @param {string} color
+ * @param {string} text
+ * @param {Function} onClick : toggle showAddTasks
+ *
  * @returns Add task button
  */
 const Button = ({
-  color,
-  text,
-  onClick,
+  color = "",
+  text = "",
+  onClick = () => {},
 }: {
-  color: any;
-  text: any;
+  color: string;
+  text: string;
   onClick: any;
 }) => {
   return (

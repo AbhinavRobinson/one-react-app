@@ -2,7 +2,7 @@ import Task from "./Task";
 
 /** Tasks Component
  * @param {Array} task
- * @typedef {Text, Day, Reminder} task
+ * @def {id, text, day, reminder} task
  *
  * @param {Function} onDelete : delete task
  * @param {Function} onToggle : toggle reminder

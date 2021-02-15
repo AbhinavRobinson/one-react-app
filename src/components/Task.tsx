@@ -1,12 +1,20 @@
 import { FaTimes } from "react-icons/fa";
 
-/** Task Component
+/**
+ * @summary Task Component lists tasks
+ *
+ * @param {Array} task array
+ * @def {id, text, day, reminder} task
+ *
+ * @param {Function} onDelete : delete task
+ * @param {Function} onToggle : toggle reminder
+ *
  * @returns Single Task
  */
 const Task = ({
-  task,
-  onDelete,
-  onToggle,
+  task = [],
+  onDelete = () => {},
+  onToggle = () => {},
 }: {
   task: any;
   onDelete: Function;
