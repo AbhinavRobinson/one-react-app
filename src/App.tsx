@@ -36,7 +36,13 @@ const App = () => {
    * TOGGLE REMINDER
    * @param {string} id
    */
-  const toggleReminder = (id: string) => {};
+  const toggleReminder = (id: string) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      )
+    );
+  };
 
   return (
     <div className="flex items-center justify-center w-screen h-screen p-8 m-0 bg-gradient-to-tr from-yellow-500 to-red-300">
