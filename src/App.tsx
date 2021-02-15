@@ -26,6 +26,12 @@ const App = () => {
       day: "Everyday at 8:45pm",
       reminder: false,
     },
+    {
+      id: "3",
+      text: "Workout",
+      day: "Everyday at 7:00pm",
+      reminder: false,
+    },
   ]);
 
   /**
