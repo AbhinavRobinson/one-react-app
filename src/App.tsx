@@ -77,6 +77,8 @@ const App = () => {
     // Add new task
     const newTask = { id, ...task };
     setTasks([...tasks, newTask]);
+    // hide (close) add task
+    showAddTask(false);
   };
 
   /**
