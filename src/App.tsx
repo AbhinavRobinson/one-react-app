@@ -8,7 +8,7 @@ import AddTasks from "./components/AddTasks";
  *
  * @author Abhinav Robinson
  */
-const App = () => {
+const App: React.FC = () => {
   /**
    * TASKS STATE
    *
