@@ -65,9 +65,18 @@ const App = () => {
 
   /**
    * ADD TASKS
+   *
+   * @summary add new task to tasks array
+   *
+   * @returns void
    */
   const addTask = (task: any) => {
-    console.log(task);
+    // generate random id
+    const id = Math.floor(Math.random() * 100000) + 1;
+
+    // Add new task
+    const newTask = { id, ...task };
+    setTasks([...tasks, newTask]);
   };
 
   return (
