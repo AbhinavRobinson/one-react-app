@@ -36,6 +36,15 @@ const App: React.FC = () => {
     return data;
   };
 
+  // fetch tasks
+  const fetchTask = async (id: Number) => {
+    const res = await fetch(`http://localhost:8000/tasks/${id}`);
+
+    const data = await res.json();
+
+    return data;
+  };
+
   /**
    * DELETE TASK
    *
@@ -58,10 +67,23 @@ const App: React.FC = () => {
    * @param {string} id
    * @returns void
    */
-  const toggleReminder = (id: Number) => {
+  const toggleReminder = async (id: Number) => {
+    const taskToToggle = await fetchTask(id);
+    const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
+
+    const res = await fetch(`http://localhost:8000/tasks/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(updTask),
+    });
+
+    const data = await res.json();
+
     setTasks(
-      tasks.map((task, index) =>
-        index === id ? { ...task, reminder: !task.reminder } : task
+      tasks.map((task) =>
+        task.id === id ? { ...task, reminder: data.reminder } : task
       )
     );
   };
