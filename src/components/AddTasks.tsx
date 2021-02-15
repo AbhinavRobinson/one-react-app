@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-const AddTasks = ({ onAdd }: { onAdd: Function }) => {
+const AddTasks = ({
+  onAdd,
+  showAddTask,
+}: {
+  onAdd: Function;
+  showAddTask: Boolean;
+}) => {
   /**
    * State Updates
    *
@@ -50,7 +56,9 @@ const AddTasks = ({ onAdd }: { onAdd: Function }) => {
 
   return (
     <form
-      className="absolute flex flex-col flex-wrap self-end p-5 mb-4 duration-200 transform translate-y-16 border-2 border-gray-500 shadow-2xl w-96 bg-gray-50 rounded-xl add-form"
+      className={`absolute ${
+        showAddTask ? "flex" : "hidden"
+      } flex-col flex-wrap self-end p-5 mb-4 duration-200 transform translate-y-16 border-2 border-gray-500 shadow-2xl w-96 bg-gray-50 rounded-xl add-form`}
       onSubmit={onSubmit}
     >
       <div className="py-4 form-control">
