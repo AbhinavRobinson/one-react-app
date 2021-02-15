@@ -1,6 +1,10 @@
 import Button from "./Button";
 
 /** Task Header Component
+ *
+ * @param {string} title - Title of app
+ * @param {Function} hideAddTask - toggle addTask component
+ *
  * @returns Task Header
  */
 const Header = ({

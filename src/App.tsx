@@ -91,6 +91,8 @@ const App = () => {
 
   /**
    * @summary hide or show (toggle) add task
+   *
+   * @returns void
    */
   const hideAddTask = () => {
     showAddTask(!showaddtask);

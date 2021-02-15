@@ -1,8 +1,14 @@
 import { useState } from "react";
 
+/**
+ * @summary gives ability to add tasks
+ *
+ * @param {Function} onAdd : add tasks
+ * @param {Boolean} showAddTask : toggle this Component
+ */
 const AddTasks = ({
-  onAdd,
-  showAddTask,
+  onAdd = () => {},
+  showAddTask = false,
 }: {
   onAdd: Function;
   showAddTask: Boolean;
@@ -46,6 +52,7 @@ const AddTasks = ({
       return;
     }
 
+    // update state
     onAdd({ text, day, reminder });
 
     // clear states
