@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTasks from "./components/AddTasks";
@@ -15,25 +15,26 @@ const App: React.FC = () => {
    * @summary staticly contains all task info
    */
   const [tasks, setTasks] = useState([
-    {
-      id: "1",
-      text: "Coding Session with Codechef",
-      day: "Jan 28th at 3:30pm",
-      reminder: true,
-    },
-    {
-      id: "2",
-      text: "Meeting for Nudge App",
-      day: "Everyday at 8:45pm",
-      reminder: false,
-    },
-    {
-      id: "3",
-      text: "Workout",
-      day: "Everyday at 7:00pm",
-      reminder: false,
-    },
+    { id: 0, text: "", day: "", reminder: false },
   ]);
+
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      setTasks(tasksFromServer);
+    };
+
+    getTasks();
+  }, []);
+
+  // fetch tasks
+  const fetchTasks = async () => {
+    const res = await fetch("http://localhost:8000/tasks");
+
+    const data = await res.json();
+
+    return data;
+  };
 
   /**
    * DELETE TASK
@@ -43,8 +44,8 @@ const App: React.FC = () => {
    * @param {string} id
    * @reutrns void
    */
-  const deleteTask = (id: string) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+  const deleteTask = (id: Number) => {
+    setTasks(tasks.filter((task, index) => index !== id));
   };
 
   /**
@@ -55,10 +56,10 @@ const App: React.FC = () => {
    * @param {string} id
    * @returns void
    */
-  const toggleReminder = (id: string) => {
+  const toggleReminder = (id: Number) => {
     setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, reminder: !task.reminder } : task
+      tasks.map((task, index) =>
+        index === id ? { ...task, reminder: !task.reminder } : task
       )
     );
   };

@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Coding Session with Codechef",
+      "day": "Jan 28th at 3:30pm",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Meeting for Nudge App",
+      "day": "Everyday at 8:45pm",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Workout",
+      "day": "Everyday at 7:00pm",
+      "reminder": false
+    }
+  ]
+}
