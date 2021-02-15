@@ -73,15 +73,16 @@ const App: React.FC = () => {
    *
    * @returns void
    */
-  const addTask = (task: any) => {
-    // generate random id
-    const id = Math.floor(Math.random() * 100000) + 1;
+  const addTask = async (task: any) => {
+    const res = await fetch("http://localhost:8000/tasks", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(task),
+    });
 
-    // Add new task
-    const newTask = { id, ...task };
-    setTasks([...tasks, newTask]);
-    // hide (close) add task
-    showAddTask(false);
+    const data = await res.json();
+
+    setTasks([...tasks, data]);
   };
 
   /**
