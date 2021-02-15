@@ -1,16 +1,16 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Coding Session with Codechef",
-      "day": "Jan 28th at 3:30pm",
-      "reminder": true
+      "text": "Go out for dinner",
+      "day": "Today @9:00PM",
+      "reminder": true,
+      "id": 1
     },
     {
-      "text": "Atom Meeting",
-      "day": "Everyday",
-      "reminder": true,
-      "id": 2
+      "text": "Workout",
+      "day": "Everyday @7:00PM",
+      "reminder": false,
+      "id": 3
     }
   ]
 }
