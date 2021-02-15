@@ -33,7 +33,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-screen h-screen p-8 m-0 bg-indigo-900">
+    <div className="flex items-center justify-center w-screen h-screen p-8 m-0 bg-gradient-to-tr from-yellow-500 to-red-300">
       <div className="flex flex-col w-2/3 h-auto max-w-screen-sm p-12 m-0 bg-white border-2 border-gray-900 shadow-inner rounded-xl">
         <Header />
         {tasks.length > 0 ? (
